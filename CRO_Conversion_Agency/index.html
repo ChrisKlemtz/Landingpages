@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRO &amp; Conversion Optimierung für Shopify | Christoph Klemtz</title>
+  <meta name="description" content="Christoph Klemtz – CRO &amp; Conversion Engineering. Datengetriebene A/B Tests &amp; Conversion-Optimierungen die messbaren Umsatz erzeugen. Jetzt kostenloses Audit buchen.">
+  <link rel="canonical" href="https://maximiliankraft.de/">
+
+  <!-- OG Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maximiliankraft.de/">
+  <meta property="og:title" content="CRO &amp; Conversion Optimierung für Shopify | Christoph Klemtz">
+  <meta property="og:description" content="Datengetriebene A/B Tests &amp; Conversion-Optimierungen die messbaren Umsatz erzeugen. Jetzt kostenloses Audit buchen.">
+  <meta property="og:image" content="https://maximiliankraft.de/og-image.jpg">
+  <meta property="og:locale" content="de_DE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CRO &amp; Conversion Optimierung für Shopify | Christoph Klemtz">
+  <meta name="twitter:description" content="Datengetriebene A/B Tests &amp; Conversion-Optimierungen die messbaren Umsatz erzeugen.">
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Anti-FOUC: Theme vor erstem Paint setzen -->
+  <script>
+    (function(){
+      var t=localStorage.getItem('ck-theme');
+      if(t){document.documentElement.setAttribute('data-theme',t);}
+      else if(window.matchMedia('(prefers-color-scheme: light)').matches){
+        document.documentElement.setAttribute('data-theme','light');
+      }
+    })();
+  </script>
+
+  <!-- Critical CSS inline (Above-the-fold, theme-aware) -->
+  <style>
+    :root{--base:#0a0a0a;--surface:#111111;--white:#ffffff;--accent:#ff6b00;--muted:#888}
+    [data-theme="light"]{--base:#f5f5f0;--surface:#ffffff;--white:#0d0d0d;--muted:#595959}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--base);color:var(--white);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background-color .3s,color .3s}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 0;transition:background .3s,backdrop-filter .3s}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .hero{min-height:100svh;display:flex;align-items:center;padding-top:80px}
+    h1,h2,h3{font-family:'Syne',sans-serif}
+    .skip-link{position:absolute;top:-100%;left:1rem;z-index:10000;background:var(--accent);color:#0a0a0a;font-weight:700;font-family:'Inter',sans-serif;padding:.8rem 1.5rem;border-radius:0 0 12px 12px;text-decoration:none;font-size:.9375rem;transition:top .2s ease}
+    .skip-link:focus{top:0;outline:3px solid #0a0a0a;outline-offset:2px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+
+  <!-- JSON-LD Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Christoph Klemtz",
+    "jobTitle": "CRO & Conversion Engineer",
+    "url": "https://maximiliankraft.de",
+    "description": "Spezialist für Conversion Rate Optimierung und datengetriebene A/B Tests für E-Commerce und Shopify Shops.",
+    "knowsAbout": ["Conversion Rate Optimization", "A/B Testing", "Shopify", "E-Commerce", "Web Analytics"],
+    "offers": {
+      "@type": "Offer",
+      "name": "CRO & Conversion Engineering Services"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "CRO & Conversion Optimierung",
+    "provider": {
+      "@type": "Person",
+      "name": "Christoph Klemtz"
+    },
+    "serviceType": "Conversion Rate Optimization",
+    "description": "Datengetriebene Conversion Optimierung durch A/B Tests, CRO Audits und Full-Service Optimierung für Online-Shops.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "DE"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "CRO Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "CRO Audit"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "A/B Testing"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Full-Service Optimierung"}}
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Was kostet eine CRO Optimierung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die Kosten für CRO Optimierung variieren je nach Umfang. Ein CRO Audit startet ab €1.490, A/B Testing Pakete beginnen bei €2.490 pro Monat, Full-Service Optimierung ist projektbasiert ab €4.900 verfügbar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lange dauert ein A/B Test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ein valider A/B Test benötigt in der Regel 2–4 Wochen, abhängig von deinem Traffic-Volumen. Statistisch signifikante Ergebnisse erfordern mindestens 100 Conversions pro Variante."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Tools werden verwendet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ich arbeite mit Google Optimize, VWO, Optimizely für Tests sowie Google Analytics 4, Hotjar und Microsoft Clarity für Datenanalyse. Die Tool-Wahl wird an dein Setup angepasst."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ab welcher Traffic-Menge macht CRO Sinn?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CRO macht ab ca. 5.000 monatlichen Besuchern Sinn. Darunter fehlt die statistische Power für valide A/B Tests. Bei geringerem Traffic starten wir mit einem CRO Audit und Quick-Wins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was ist der Unterschied zwischen CRO und UX?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "UX fokussiert auf Nutzererlebnis und Usability. CRO ist messbarer und direkt auf Conversion-KPIs ausgerichtet. Gute CRO nutzt UX-Prinzipien, misst aber stets den direkten Umsatzeinfluss via A/B Test."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip Navigation (WCAG 2.4.1) -->
+  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
+  <header class="nav" id="nav" role="banner">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Christoph Klemtz – Startseite">
+        <span class="logo-ck">CK</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Hauptnavigation">
+        <a href="#leistungen" class="nav-link">Leistungen</a>
+        <a href="#referenzen" class="nav-link">Referenzen</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#audit" class="nav-cta">Kostenloses Audit</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Zu Light Mode wechseln"
+          title="Farbschema wechseln"
+          type="button"
+        >
+          <!-- Sun: sichtbar im Dark Mode → klick wechselt zu Light -->
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <!-- Moon: sichtbar im Light Mode → klick wechselt zu Dark -->
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+          <span class="sr-only" aria-live="polite" id="theme-announcement"></span>
+        </button>
+
+        <!-- Hamburger (Mobile) -->
+        <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links" type="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Hero Section">
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-gradient" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="hero-overline">CRO &amp; Conversion Engineering</p>
+        <h1 class="hero-h1">Dein Shop verliert täglich Geld.<br><span class="accent">Ich stoppe das.</span></h1>
+        <p class="hero-sub">Ich entwickle datengetriebene A/B Tests und Conversion-Optimierungen die messbaren Umsatz erzeugen – nicht nur schöne Designs.</p>
+        <div class="hero-ctas">
+          <a href="#audit" class="btn-primary">Kostenloses Audit buchen</a>
+          <a href="#referenzen" class="btn-secondary">Referenzprojekte ansehen</a>
+        </div>
+        <div class="hero-metrics" role="list" aria-label="Kennzahlen">
+          <div class="metric" role="listitem">
+            <span class="metric-number">+€1.2M</span>
+            <span class="metric-label">generierter Mehrumsatz</span>
+          </div>
+          <div class="metric-divider" aria-hidden="true"></div>
+          <div class="metric" role="listitem">
+            <span class="metric-number">34</span>
+            <span class="metric-label">A/B Tests live</span>
+          </div>
+          <div class="metric-divider" aria-hidden="true"></div>
+          <div class="metric" role="listitem">
+            <span class="metric-number">Ø +23%</span>
+            <span class="metric-label">Conversion Rate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ SOCIAL PROOF STRIP ═══════════════════════════════════════ -->
+    <section class="strip-section" aria-label="Referenzkunden">
+      <div class="strip-label">Vertrauen von wachsenden Brands</div>
+      <div class="strip-track-wrapper" aria-hidden="true">
+        <div class="strip-track">
+          <span class="strip-logo">AUROA</span>
+          <span class="strip-logo">VELTEX</span>
+          <span class="strip-logo">KYNOS</span>
+          <span class="strip-logo">DREFORM</span>
+          <span class="strip-logo">NUUVA</span>
+          <span class="strip-logo">AUROA</span>
+          <span class="strip-logo">VELTEX</span>
+          <span class="strip-logo">KYNOS</span>
+          <span class="strip-logo">DREFORM</span>
+          <span class="strip-logo">NUUVA</span>
+          <span class="strip-logo">AUROA</span>
+          <span class="strip-logo">VELTEX</span>
+          <span class="strip-logo">KYNOS</span>
+          <span class="strip-logo">DREFORM</span>
+          <span class="strip-logo">NUUVA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ PROBLEM SECTION ═══════════════════════════════════════ -->
+    <section class="section problem-section" id="problem" aria-labelledby="problem-h2">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Das Problem</span>
+          <h2 id="problem-h2" class="section-h2">Warum die meisten Shops unter ihrem<br><span class="accent">Potenzial bleiben</span></h2>
+        </div>
+        <div class="problem-grid" role="list">
+          <article class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3 class="problem-title">Bauchgefühl statt Daten</h3>
+            <p class="problem-text">Entscheidungen werden nach Meinung getroffen, nicht nach Nutzerverhalten. Das kostet täglich messbaren Umsatz – ohne dass du es merkst.</p>
+          </article>
+          <article class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            </div>
+            <h3 class="problem-title">Tests ohne statistische Signifikanz</h3>
+            <p class="problem-text">A/B Tests werden zu früh abgebrochen oder falsch ausgewertet. Die Ergebnisse sind zufällig – und trotzdem werden Entscheidungen darauf gebaut.</p>
+          </article>
+          <article class="problem-card" role="listitem">
+            <div class="problem-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M12 2l10 10-10 10"/></svg>
+            </div>
+            <h3 class="problem-title">Design-Änderungen ohne Conversion-Fokus</h3>
+            <p class="problem-text">Redesigns optimieren für Ästhetik, nicht für Umsatz. Schöner aussehen ≠ mehr verkaufen. Ohne Hypothese hinter jeder Änderung verschenkst du Wachstum.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ HOW IT WORKS ═══════════════════════════════════════ -->
+    <div class="sticky-scroll-wrapper">
+      <section class="section howitworks-section sticky-section" id="prozess" aria-labelledby="howitworks-h2">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Der Prozess</span>
+            <h2 id="howitworks-h2" class="section-h2">Wie ich arbeite – <span class="accent">systematisch, messbar, profitabel</span></h2>
+          </div>
+          <div class="steps-grid">
+            <article class="step-card sticky-step" data-step="1">
+              <div class="step-number" aria-hidden="true">01</div>
+              <div class="step-content">
+                <h3 class="step-title">Analyse</h3>
+                <p class="step-subtitle">Ich finde wo dein Shop Geld verliert</p>
+                <p class="step-text">Heatmaps, Session Recordings, Funnel-Analyse, Checkout-Daten. Ich identifiziere exakt welche Seiten und Elemente Conversions blockieren – mit Zahlen, nicht mit Vermutungen.</p>
+              </div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </article>
+            <article class="step-card sticky-step" data-step="2">
+              <div class="step-number" aria-hidden="true">02</div>
+              <div class="step-content">
+                <h3 class="step-title">Hypothese</h3>
+                <p class="step-subtitle">Datenbasierte Testideen mit klarem Ziel</p>
+                <p class="step-text">Jede Hypothese folgt dem Framework: "Weil [Daten], glauben wir dass [Änderung] zu [Ergebnis] führt." Priorisiert nach erwarteten Impact, Konfidenz und Aufwand.</p>
+              </div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </article>
+            <article class="step-card sticky-step" data-step="3">
+              <div class="step-number" aria-hidden="true">03</div>
+              <div class="step-content">
+                <h3 class="step-title">Test &amp; Scale</h3>
+                <p class="step-subtitle">A/B Test, Auswertung, Implementierung</p>
+                <p class="step-text">Live-Test mit statistischer Signifikanz als Voraussetzung. Gewinner werden implementiert, Erkenntnisse dokumentiert. So baut jeder Test auf dem letzten auf.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="sticky-progress" aria-hidden="true">
+          <span class="sticky-dot"></span>
+          <span class="sticky-dot"></span>
+          <span class="sticky-dot"></span>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════════════════════════════ BENTO GRID – SOCIAL PROOF ═══════════════════════════════════════ -->
+    <section class="section bento-section" id="referenzen" aria-labelledby="bento-h2">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Ergebnisse</span>
+          <h2 id="bento-h2" class="section-h2">Zahlen die für sich sprechen – <span class="accent">keine Versprechen</span></h2>
+        </div>
+        <div class="bento-grid">
+
+          <!-- Large testimonial -->
+          <article class="bento-card bento-large">
+            <div class="bento-quote" aria-hidden="true">"</div>
+            <blockquote class="bento-testimonial-text">
+              "Christoph hat unseren Checkout komplett analysiert und innerhalb von 8 Wochen unsere Conversion Rate von 1,4% auf 2,1% gebracht. Das entspricht über €340.000 zusätzlichem Jahresumsatz. Kein Blabla, nur Ergebnisse."
+            </blockquote>
+            <footer class="bento-author">
+              <div class="bento-author-info">
+                <cite class="bento-author-name">Jonas Reiter</cite>
+                <span class="bento-author-company">Head of E-Commerce, AUROA</span>
+              </div>
+              <div class="bento-result-badge" aria-label="Ergebnis: Plus 50 Prozent Conversion Rate">+50% CVR</div>
+            </footer>
+          </article>
+
+          <!-- Stat card -->
+          <div class="bento-card bento-stat" aria-label="Plus 340.000 Euro zusätzlicher Umsatz">
+            <span class="bento-stat-number">+€340k</span>
+            <span class="bento-stat-label">Mehrumsatz in 8 Wochen</span>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <article class="bento-card bento-medium">
+            <blockquote class="bento-testimonial-text-sm">
+              "Der CRO Audit hat gezeigt wo wir wirklich Geld lassen. Die Quick-Wins allein haben sich in 3 Wochen amortisiert."
+            </blockquote>
+            <footer class="bento-author-sm">
+              <cite class="bento-author-name">Laura Menz</cite>
+              <span class="bento-author-company">CEO, VELTEX</span>
+            </footer>
+          </article>
+
+          <!-- Stat card 2 -->
+          <div class="bento-card bento-stat bento-stat-accent" aria-label="Plus 31 Prozent Conversion Rate">
+            <span class="bento-stat-number">+31%</span>
+            <span class="bento-stat-label">Conversion Rate</span>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <article class="bento-card bento-medium">
+            <blockquote class="bento-testimonial-text-sm">
+              "Endlich ein CRO Spezialist der versteht dass Testen Prozess bedeutet, nicht Glücksspiel. Absolut empfehlenswert."
+            </blockquote>
+            <footer class="bento-author-sm">
+              <cite class="bento-author-name">Tim Voss</cite>
+              <span class="bento-author-company">Founder, KYNOS</span>
+            </footer>
+          </article>
+
+          <!-- Stat card 3 -->
+          <div class="bento-card bento-stat" aria-label="12 Wochen durchschnittliche Projektlaufzeit">
+            <span class="bento-stat-number">12</span>
+            <span class="bento-stat-label">Wochen ø Projektlaufzeit</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ LEISTUNGEN ═══════════════════════════════════════ -->
+    <section class="section services-section" id="leistungen" aria-labelledby="services-h2">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Leistungen</span>
+          <h2 id="services-h2" class="section-h2">Conversion Optimierung –<br><span class="accent">drei Wege zum Ziel</span></h2>
+        </div>
+        <div class="services-grid">
+
+          <article class="service-card service-card--featured">
+            <div class="service-badge">Empfohlen</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+            </div>
+            <h3 class="service-title">Full-Service Optimierung</h3>
+            <p class="service-desc">Der komplette CRO-Prozess von Analyse über Hypothesen bis zur Implementierung. Ich übernehme alles – du siehst die Ergebnisse.</p>
+            <ul class="service-features" aria-label="Enthaltene Leistungen">
+              <li>Vollständige Funnel-Analyse</li>
+              <li>Priorisiertes Test-Backlog</li>
+              <li>A/B Testing &amp; Implementierung</li>
+              <li>Monatliches Performance Reporting</li>
+              <li>Direkter Slack-Zugang</li>
+            </ul>
+            <div class="service-pricing">
+              <span class="service-price">ab €4.900</span>
+              <span class="service-period">/Projekt</span>
+            </div>
+            <a href="#audit" class="btn-primary service-btn">Jetzt anfragen</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3 class="service-title">CRO Audit</h3>
+            <p class="service-desc">Ich analysiere deinen Shop komplett und liefere einen priorisierten Aktionsplan mit konkreten Empfehlungen und erwarteten Impact-Werten.</p>
+            <ul class="service-features" aria-label="Enthaltene Leistungen">
+              <li>Heuristik-Analyse aller Key-Pages</li>
+              <li>Heatmap &amp; Session-Auswertung</li>
+              <li>Checkout-Funnel-Analyse</li>
+              <li>Priorisierte Quick-Win Liste</li>
+            </ul>
+            <div class="service-pricing">
+              <span class="service-price">ab €1.490</span>
+              <span class="service-period">einmalig</span>
+            </div>
+            <a href="#audit" class="btn-outline service-btn">Jetzt anfragen</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <h3 class="service-title">A/B Testing</h3>
+            <p class="service-desc">Kontinuierliches Testen mit wissenschaftlicher Methodik. Jeder Test hat eine klare Hypothese, statistisch valide Laufzeit und messbare Erfolgskriterien.</p>
+            <ul class="service-features" aria-label="Enthaltene Leistungen">
+              <li>Hypothesen-Entwicklung</li>
+              <li>Test-Setup &amp; QA</li>
+              <li>Statistische Auswertung</li>
+              <li>Implementierungs-Handoff</li>
+            </ul>
+            <div class="service-pricing">
+              <span class="service-price">ab €2.490</span>
+              <span class="service-period">/Monat</span>
+            </div>
+            <a href="#audit" class="btn-outline service-btn">Jetzt anfragen</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ FAQ ═══════════════════════════════════════ -->
+    <section class="section faq-section" id="faq" aria-labelledby="faq-h2">
+      <div class="container faq-container">
+        <div class="section-header">
+          <span class="section-tag">FAQ</span>
+          <h2 id="faq-h2" class="section-h2">Häufige Fragen zur<br><span class="accent">Conversion Optimierung</span></h2>
+        </div>
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+              <span>Was kostet eine CRO Optimierung?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-1" role="region" hidden>
+              <p>Die Kosten für CRO Optimierung variieren je nach Projektumfang und Ausgangssituation. Ein einmaliger <strong>CRO Audit startet ab €1.490</strong>. Laufende <strong>A/B Testing Pakete beginnen bei €2.490 pro Monat</strong>. Full-Service Projekte sind individuell kalkuliert und starten ab €4.900. Alle Investitionen werden durch den generierten Mehrumsatz typischerweise innerhalb von 4–12 Wochen amortisiert.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+              <span>Wie lange dauert ein A/B Test?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-2" role="region" hidden>
+              <p>Ein statistisch valider A/B Test benötigt in der Regel <strong>2–4 Wochen</strong>, abhängig von deinem täglichen Traffic-Volumen. Die Mindestvorgabe: 100 Conversions pro Variante und mindestens 95% statistische Signifikanz. Tests werden nie vorzeitig abgebrochen – das ist einer der häufigsten Fehler bei CRO.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+              <span>Welche Tools werden verwendet?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-3" role="region" hidden>
+              <p>Für Testing nutze ich je nach Setup <strong>VWO, Optimizely oder Convert</strong>. Für Analyse: <strong>Google Analytics 4, Hotjar, Microsoft Clarity</strong> und Segment. Das Tool-Stack wird an deine bestehende Infrastruktur angepasst – kein Vendor-Lock-in, kein unnötiger Tool-Overhead.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+              <span>Ab welcher Traffic-Menge macht CRO Sinn?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-4" role="region" hidden>
+              <p>Für vollwertige A/B Tests empfehle ich mindestens <strong>5.000 monatliche Besucher</strong> und 200+ Transaktionen. Darunter fehlt die statistische Power für valide Ergebnisse. Bei geringerem Traffic starten wir mit einem <strong>CRO Audit und heuristischen Quick-Wins</strong> – ohne Tests, aber mit messbarem Impact.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+              <span>Was ist der Unterschied zwischen CRO und UX?</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-5" role="region" hidden>
+              <p><strong>UX Design</strong> optimiert das Nutzererlebnis und die Usability – oft qualitativ, mit Fokus auf Zufriedenheit. <strong>CRO (Conversion Rate Optimization)</strong> ist direkt auf messbare Business-KPIs ausgerichtet: Conversion Rate, AOV, Revenue per Visitor. Gute CRO nutzt UX-Prinzipien als Input, misst aber stets den direkten Umsatzeinfluss quantitativ via A/B Test.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ CTA SECTION ═══════════════════════════════════════ -->
+    <section class="section cta-section" id="audit" aria-labelledby="cta-h2">
+      <div class="container">
+        <div class="cta-inner">
+          <div class="cta-scarcity" aria-live="polite">
+            <span class="scarcity-dot" aria-hidden="true"></span>
+            Aktuell 2 Projektplätze verfügbar
+          </div>
+          <h2 id="cta-h2" class="cta-h2">Jeder Monat ohne Optimierung ist Umsatz<br>den du <span class="accent">nie zurückbekommst.</span></h2>
+          <p class="cta-sub">Hör auf Conversions zu verschenken. Lass uns in einem kostenlosen 30-Minuten-Audit herausfinden, wo dein Shop Geld verliert.</p>
+          <a href="mailto:hello@maximiliankraft.de" class="btn-primary btn-large">Kostenloses Audit buchen</a>
+          <p class="cta-reassurance">Kein Retainer. Kein Risiko. Ergebnisorientiert.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a href="#" class="nav-logo footer-logo" aria-label="Christoph Klemtz – Startseite">
+          <span class="logo-ck">CK</span>
+        </a>
+        <p class="footer-copy">&copy; 2026 Christoph Klemtz. Alle Rechte vorbehalten.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer Navigation">
+        <a href="#leistungen" class="footer-link">Leistungen</a>
+        <a href="#faq" class="footer-link">FAQ</a>
+        <a href="mailto:hello@maximiliankraft.de" class="footer-link">Kontakt</a>
+      </nav>
+      <div class="footer-social" aria-label="Social Media Links">
+        <!-- LinkedIn -->
+        <a href="#" class="social-link" aria-label="LinkedIn Profil">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <!-- Twitter/X -->
+        <a href="#" class="social-link" aria-label="Twitter Profil">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <!-- GitHub -->
+        <a href="#" class="social-link" aria-label="GitHub Profil">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
